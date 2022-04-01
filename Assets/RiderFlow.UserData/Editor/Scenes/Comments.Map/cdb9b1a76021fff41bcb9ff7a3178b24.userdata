@@ -1,0 +1,32 @@
+{
+  "GlobalObjectId_V1-2-cdb9b1a76021fff41bcb9ff7a3178b24-2112184932-0": {
+    "GameObjectId": "GlobalObjectId_V1-2-cdb9b1a76021fff41bcb9ff7a3178b24-2112184932-0",
+    "CommentText": "All the cutscenes in the game",
+    "AssetGUID": "cdb9b1a76021fff41bcb9ff7a3178b24",
+    "UniqueItemID": "GlobalObjectId_V1-2-cdb9b1a76021fff41bcb9ff7a3178b24-2112184932-0"
+  },
+  "GlobalObjectId_V1-2-cdb9b1a76021fff41bcb9ff7a3178b24-1883608243-0": {
+    "GameObjectId": "GlobalObjectId_V1-2-cdb9b1a76021fff41bcb9ff7a3178b24-1883608243-0",
+    "CommentText": "All environmental assets",
+    "AssetGUID": "cdb9b1a76021fff41bcb9ff7a3178b24",
+    "UniqueItemID": "GlobalObjectId_V1-2-cdb9b1a76021fff41bcb9ff7a3178b24-1883608243-0"
+  },
+  "GlobalObjectId_V1-2-cdb9b1a76021fff41bcb9ff7a3178b24-1864055460-0": {
+    "GameObjectId": "GlobalObjectId_V1-2-cdb9b1a76021fff41bcb9ff7a3178b24-1864055460-0",
+    "CommentText": "All friendly players go in here",
+    "AssetGUID": "cdb9b1a76021fff41bcb9ff7a3178b24",
+    "UniqueItemID": "GlobalObjectId_V1-2-cdb9b1a76021fff41bcb9ff7a3178b24-1864055460-0"
+  },
+  "GlobalObjectId_V1-2-cdb9b1a76021fff41bcb9ff7a3178b24-2064274907-0": {
+    "GameObjectId": "GlobalObjectId_V1-2-cdb9b1a76021fff41bcb9ff7a3178b24-2064274907-0",
+    "CommentText": "All the Managers held here",
+    "AssetGUID": "cdb9b1a76021fff41bcb9ff7a3178b24",
+    "UniqueItemID": "GlobalObjectId_V1-2-cdb9b1a76021fff41bcb9ff7a3178b24-2064274907-0"
+  },
+  "GlobalObjectId_V1-2-cdb9b1a76021fff41bcb9ff7a3178b24-1087863873-0": {
+    "GameObjectId": "GlobalObjectId_V1-2-cdb9b1a76021fff41bcb9ff7a3178b24-1087863873-0",
+    "CommentText": "All enemies go here",
+    "AssetGUID": "cdb9b1a76021fff41bcb9ff7a3178b24",
+    "UniqueItemID": "GlobalObjectId_V1-2-cdb9b1a76021fff41bcb9ff7a3178b24-1087863873-0"
+  }
+}
