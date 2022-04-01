@@ -2,6 +2,7 @@
 
 public class PlayerBehaviour : MonoBehaviour
 {
+
     private int _currentCamera = 1;
 
     private bool isCinematicPlaying;
@@ -28,8 +29,7 @@ public class PlayerBehaviour : MonoBehaviour
                 _currentCamera = 1;
             }
 
-            _cameraToggle.ResetCams();
-            _cameraToggle.SetPriorítyCamera(_currentCamera);
+            _cameraToggle.SwitchCamera(_currentCamera);
         }
     }
 
