@@ -2,23 +2,39 @@
 
 public class PlayerBehaviour : MonoBehaviour
 {
-
     private int _currentCamera = 1;
-
-    private bool isCinematicPlaying;
 
     private PlayerCameraToggle _cameraToggle;
 
+    private GameManager _gameManager;
 
 
     void Start()
     {
         _cameraToggle = GameObject.Find("Camera_Manager").GetComponent<PlayerCameraToggle>();
+        _gameManager = GameObject.Find("Game_Manager").GetComponent<GameManager>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && !isCinematicPlaying)
+        // If a cinematic is playing, don't allow the player to do anything
+        if (_gameManager.IsCinematicPlaying) return;
+        // Else, give them functionalty to change cameras and also initiate the idle custcene 
+        else
+        {
+            SwitchCamera();
+
+            // Continually gets called as the player keeps pressing buttons
+            if (Input.anyKeyDown)
+            {
+                _gameManager.IdleCinematicIsPlaying();
+            }
+        }
+    }
+
+    void SwitchCamera()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
         {
             if (_currentCamera == 1)
             {
@@ -29,6 +45,7 @@ public class PlayerBehaviour : MonoBehaviour
                 _currentCamera = 1;
             }
 
+            Debug.Log("I'm in!");
             _cameraToggle.SwitchCamera(_currentCamera);
         }
     }
