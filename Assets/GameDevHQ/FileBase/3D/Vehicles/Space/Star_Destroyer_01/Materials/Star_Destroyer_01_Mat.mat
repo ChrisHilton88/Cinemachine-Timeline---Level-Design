@@ -66,7 +66,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaClip: 0
-    - _Blend: 2
+    - _Blend: 0
     - _BumpScale: 1
     - _Cull: 0
     - _Cutoff: 0.5
@@ -93,7 +93,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 3.1360536, g: 0.60650086, b: 0.60650086, a: 1}
+    - _EmissionColor: {r: 2.828427, g: 0, b: 0.110918716, a: 1}
     - _SpecColor: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 1}
 --- !u!114 &4615846669264073610
 MonoBehaviour:

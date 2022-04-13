@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2290290592248394538}
   - component: {fileID: 2290290592248394539}
-  - component: {fileID: 3499063352321996920}
+  - component: {fileID: 274968941}
   m_Layer: 0
   m_Name: Shooting Star 1
   m_TagString: Untagged
@@ -129,7 +129,7 @@ TrailRenderer:
   m_MinVertexDistance: 1
   m_Autodestruct: 1
   m_Emitting: 1
---- !u!95 &3499063352321996920
+--- !u!95 &274968941
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -142,7 +142,7 @@ Animator:
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
