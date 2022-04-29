@@ -1,18 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class AIBehaviour : BaseAI
+public class AIBehaviour : MonoBehaviour
 {
+    private int _speed = 50;
 
 
-    protected override void PlayerMove()
+    void Update()
     {
-
-    }
-
-    protected override void Shoot()
-    {
-
+        transform.Translate(Vector3.forward * _speed * Time.deltaTime);
     }
 }

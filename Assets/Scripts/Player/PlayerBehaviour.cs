@@ -3,32 +3,46 @@
 public class PlayerBehaviour : MonoBehaviour
 {
     private int _currentCamera = 1;
+    private float _speed = 50;
+    private float _speedAdjuster = 0.5f;
+    private int _maxSpeed = 100;
+    private int _minSpeed = 50;
 
     private PlayerCameraToggle _cameraToggle;
 
     private GameManager _gameManager;
+
+    private EngineEmissionChange _engineEmissionChange;
+
+    private bool isCinematicPlaying = false;
 
 
     void Start()
     {
         _cameraToggle = GameObject.Find("Camera_Manager").GetComponent<PlayerCameraToggle>();
         _gameManager = GameObject.Find("Game_Manager").GetComponent<GameManager>();
+        _engineEmissionChange = GetComponentInChildren<EngineEmissionChange>();
     }
 
     void Update()
     {
-        // If a cinematic is playing, don't allow the player to do anything
-        if (_gameManager.IsCinematicPlaying) return;
-        // Else, give them functionalty to change cameras and also initiate the idle custcene 
+        if (isCinematicPlaying) return;
         else
         {
-            SwitchCamera();
-
-            // Continually gets called as the player keeps pressing buttons
-            if (Input.anyKeyDown)
+            if (Time.timeScale == 0) return;
+            else
             {
-                _gameManager.IdleCinematicIsPlaying();
+                Movement();
+                SwitchCamera();
+                ThrusterBoost();
+                Debug.Log(_speed);
             }
+
+            // Idle cinematic
+            //if (Input.anyKeyDown)
+            //{
+            //    _gameManager.IdleCinematicIsPlaying();
+            //}
         }
     }
 
@@ -45,13 +59,37 @@ public class PlayerBehaviour : MonoBehaviour
                 _currentCamera = 1;
             }
 
-            Debug.Log("I'm in!");
             _cameraToggle.SwitchCamera(_currentCamera);
         }
     }
 
+
     void Movement()
     {
+        transform.Translate(Vector3.forward * _speed * Time.deltaTime);
+    }
 
+    void ThrusterBoost()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            _speed += _speedAdjuster;
+            _engineEmissionChange.ThrusterIncrease();
+
+            if(_speed >= _maxSpeed)
+            {
+                _speed = _maxSpeed;
+            }
+        }
+        else
+        {
+            _speed -= _speedAdjuster;
+            _engineEmissionChange.ThrusterIdle();
+
+            if(_speed <= _minSpeed)
+            {
+                _speed = _minSpeed;
+            }
+        }
     }
 }
