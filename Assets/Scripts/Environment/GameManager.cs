@@ -10,12 +10,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _idleTimer;
     private float _idleTimerRate = 10f;
 
+    // Unused
     [SerializeField] private GameObject[] _cutscenes;
 
-    [SerializeField] private GameObject introCutscene;
-    [SerializeField] private GameObject[] gameplayObjects;
+    [SerializeField] private GameObject _introCutscene;
+    [SerializeField] private GameObject[] _gameplayObjects;
     [SerializeField] private GameObject[] _plasmaExplosions;
+    [SerializeField] private GameObject[] _restartGameInactiveObjects;
 
+
+    void Start()
+    {
+        // Starting active game objects
+         //_introCutscene.SetActive(true);
+    }
 
 
     public void IdleCinematicIsPlaying()
@@ -64,15 +72,28 @@ public class GameManager : MonoBehaviour
     public void StartGameplay()
     {
         Time.timeScale = 0f;
-        introCutscene.SetActive(false);
+        _introCutscene.SetActive(false);
 
-        for (int i = 0; i < gameplayObjects.Length; i++)
+        for (int i = 0; i < _gameplayObjects.Length; i++)
         {
-            gameplayObjects[i].SetActive(true);
+            _gameplayObjects[i].SetActive(true);
         }
         for (int i = 0; i < _plasmaExplosions.Length; i++)
         {
             _plasmaExplosions[i].SetActive(true);
         }
+    }
+
+    public void ReloadGame()
+    {
+        SceneManager.LoadScene(1);
+
+        for (int i = 0; i < _restartGameInactiveObjects.Length; i++)
+        {
+            _restartGameInactiveObjects[i].SetActive(false);
+            Debug.Log(_restartGameInactiveObjects[i].activeInHierarchy);
+        }
+
+        Debug.Log(_introCutscene.activeInHierarchy);
     }
 }
