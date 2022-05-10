@@ -18,7 +18,6 @@ public class EngineEmissionChange : MonoBehaviour
     {
         _engineEmission.rateOverTime = _thrusterBoost;
         Debug.Log(_engineEmission.rateOverTime.constantMax);
-
     }
 
     public void ThrusterIdle()

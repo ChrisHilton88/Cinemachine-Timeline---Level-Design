@@ -10,12 +10,10 @@ public class ChangeAnimations : MonoBehaviour
     void Start()
     {
         _anim = GetComponent<Animator>();
-
     }
 
     public void SlouchToSit()
     {
         _anim.SetBool("SlouchToSit", true);
-        Debug.Log("Moving from Slouch to Sit position");
     }
 }
